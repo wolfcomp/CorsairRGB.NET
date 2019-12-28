@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29613.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CorsairRGB.NET", "CorsairRGB.NET\CorsairRGB.NET.csproj", "{0ADA86AE-6FB8-4F59-B2F8-718B5B044DC7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Test", "Test\Test.csproj", "{53EB33E6-4F6A-4FEC-B63C-70E3CBCF4B6B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Release|x64 = Release|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ADA86AE-6FB8-4F59-B2F8-718B5B044DC7}.Debug|x64.ActiveCfg = Debug|x64
+		{0ADA86AE-6FB8-4F59-B2F8-718B5B044DC7}.Debug|x64.Build.0 = Debug|x64
+		{0ADA86AE-6FB8-4F59-B2F8-718B5B044DC7}.Release|x64.ActiveCfg = Release|x64
+		{0ADA86AE-6FB8-4F59-B2F8-718B5B044DC7}.Release|x64.Build.0 = Release|x64
+		{53EB33E6-4F6A-4FEC-B63C-70E3CBCF4B6B}.Debug|x64.ActiveCfg = Debug|x64
+		{53EB33E6-4F6A-4FEC-B63C-70E3CBCF4B6B}.Debug|x64.Build.0 = Debug|x64
+		{53EB33E6-4F6A-4FEC-B63C-70E3CBCF4B6B}.Release|x64.ActiveCfg = Release|x64
+		{53EB33E6-4F6A-4FEC-B63C-70E3CBCF4B6B}.Release|x64.Build.0 = Release|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {88B512CF-8896-4E87-BDCB-A778D63DA3C2}
+	EndGlobalSection
+EndGlobal
