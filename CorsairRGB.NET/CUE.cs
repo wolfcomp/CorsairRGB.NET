@@ -124,6 +124,12 @@ namespace CorsairRGB.NET
         /// </summary>
         /// <returns></returns>
         public static bool Update() => Native.CorsairSetLedsColorsFlushBuffer();
+        
+        public delegate void CorsairEventHandler(IntPtr obj, CorsairEvent corsairEvent);
+
+        public static bool Subscribe(CorsairEventHandler onEvent, IntPtr context) => Native.CorsairSubscribeForEvents(onEvent, context);
+
+        public static bool Unsubscribe() => Native.CorsairUnsubscribeFromEvents();
 
         private static T[] GetArrayFromPointer<T>(IntPtr intPtr, int length)
         {

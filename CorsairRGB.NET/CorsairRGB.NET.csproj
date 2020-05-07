@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -10,11 +10,11 @@
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <DocumentationFile>C:\Users\Diogo\source\repos\CorsairRGB.NET\CorsairRGB.NET\CorsairRGB.NET.xml</DocumentationFile>
+    <DocumentationFile>D:\source\repos\CorsairRGB.NET\CorsairRGB.NET\CorsairRGB.NET.xml</DocumentationFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <DocumentationFile>C:\Users\Diogo\source\repos\CorsairRGB.NET\CorsairRGB.NET\CorsairRGB.NET.xml</DocumentationFile>
+    <DocumentationFile>D:\source\repos\CorsairRGB.NET\CorsairRGB.NET\CorsairRGB.NET.xml</DocumentationFile>
   </PropertyGroup>
 
   <ItemGroup>

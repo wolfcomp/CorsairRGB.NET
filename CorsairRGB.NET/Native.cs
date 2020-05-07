@@ -69,5 +69,11 @@ namespace CorsairRGB.NET
         /// </summary>
         [DllImport(dllpath, CallingConvention = CallingConvention.Cdecl)]
         internal static extern bool CorsairSetLedsColorsFlushBuffer();
+
+        [DllImport(dllpath, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool CorsairSubscribeForEvents(CUE.CorsairEventHandler onEvent, IntPtr context);
+        
+        [DllImport(dllpath, CallingConvention = CallingConvention.Cdecl)]
+        internal static extern bool CorsairUnsubscribeFromEvents();
     }
 }

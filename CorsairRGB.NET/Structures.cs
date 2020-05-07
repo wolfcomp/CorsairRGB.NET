@@ -1045,6 +1045,58 @@ namespace CorsairRGB.NET
         DAP = 6,
         Pump = 7
     };
+
+    /// <summary>
+    /// Contains list of the event identifiers to use with CorsairEventHandler
+    /// </summary>
+    public enum CorsairEventId
+    {
+        CEI_Invalid, //dummy value
+        CEI_DeviceConnectionStatusChangedEvent,
+        CEI_KeyEvent
+    }
+
+    /// <summary>
+    /// The key ids that is sent from CorsairEventHandler when event id is CEI_KeyEvent
+    /// </summary>
+    public enum CorsairKeyId
+    {
+        CorsairKey_Invalid = 0,
+
+        CorsairKeyKb_G1 = 1,
+        CorsairKeyKb_G2 = 2,
+        CorsairKeyKb_G3 = 3,
+        CorsairKeyKb_G4 = 4,
+        CorsairKeyKb_G5 = 5,
+        CorsairKeyKb_G6 = 6,
+        CorsairKeyKb_G7 = 7,
+        CorsairKeyKb_G8 = 8,
+        CorsairKeyKb_G9 = 9,
+        CorsairKeyKb_G10 = 10,
+        CorsairKeyKb_G11 = 11,
+        CorsairKeyKb_G12 = 12,
+        CorsairKeyKb_G13 = 13,
+        CorsairKeyKb_G14 = 14,
+        CorsairKeyKb_G15 = 15,
+        CorsairKeyKb_G16 = 16,
+        CorsairKeyKb_G17 = 17,
+        CorsairKeyKb_G18 = 18,
+
+        CorsairKeyMouse_M1 = 19,
+        CorsairKeyMouse_M2 = 20,
+        CorsairKeyMouse_M3 = 21,
+        CorsairKeyMouse_M4 = 22,
+        CorsairKeyMouse_M5 = 23,
+        CorsairKeyMouse_M6 = 24,
+        CorsairKeyMouse_M7 = 25,
+        CorsairKeyMouse_M8 = 26,
+        CorsairKeyMouse_M9 = 27,
+        CorsairKeyMouse_M10 = 28,
+        CorsairKeyMouse_M11 = 29,
+        CorsairKeyMouse_M12 = 30,
+
+        CorsairKey_Last = 30
+    };
 #pragma warning restore CS1591 // Missing XML comment for publicly visible type or member
     #endregion
 
@@ -1090,6 +1142,29 @@ namespace CorsairRGB.NET
         /// Number of LEDs controlled by LED-device.
         /// </summary>
         public int DeviceLedCount;
+    };
+    
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CorsairDeviceConnectionStatusChangedEvent // contains information about some device that is connected or disconnected. When user receives this event, it makes sense to reenumerate device list, because device indices may become invalid at this moment.
+    {
+        public string deviceId; // null-terminated string that contains unique device identifier.
+        public bool isConnected;         // true if connected, false if disconnected.
+    };
+    
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CorsairKeyEvent // contains information about device where G or M key was pressed/released and the key itself.
+    {
+        public string deviceId; // null-terminated string that contains unique device identifier.
+        public CorsairKeyId keyId;       // G or M key that was pressed/released.
+        public bool isPressed;           // true if pressed, false if released.
+    };
+
+    [StructLayout(LayoutKind.Sequential)]
+    public struct CorsairEvent // contains information about event id and event data.
+    {
+        public CorsairEventId id; // event identifier.
+        public CorsairDeviceConnectionStatusChangedEvent deviceConnectionStatusChangedEvent; // when id == CEI_DeviceConnectionStatusChangedEvent contains valid pointer to structure with information about connected or disconnected device.
+        public CorsairKeyEvent keyEvent;                                                     // when id == CEI_KeyEvent contains valid pointer to structure with information about pressed or released G or M button and device where this event happened.
     };
 
 #pragma warning disable IDE1006 // Naming Styles

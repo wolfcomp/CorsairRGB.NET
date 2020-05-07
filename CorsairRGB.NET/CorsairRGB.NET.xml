@@ -156,6 +156,16 @@
             Contains list of the LED-devices which can be connected to the DIY-device.
             </summary>
         </member>
+        <member name="T:CorsairRGB.NET.CorsairEventId">
+            <summary>
+            Contains list of the event identifiers to use with CorsairEventHandler
+            </summary>
+        </member>
+        <member name="T:CorsairRGB.NET.CorsairKeyId">
+            <summary>
+            The key ids that is sent from CorsairEventHandler when event id is CEI_KeyEvent
+            </summary>
+        </member>
         <member name="T:CorsairRGB.NET.CorsairLedColor">
             <summary>
             Contains information about led and its color
